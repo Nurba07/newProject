@@ -8,7 +8,7 @@
 import Foundation
 
 struct Partners: Codable {
-    let currentPartners: CurrentPartners
+    let currentPartners: [CurrentPartners]
 }
 
 struct CurrentPartners: Codable {
