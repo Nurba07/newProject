@@ -12,6 +12,8 @@ class MainTableViewCell: UITableViewCell {
     static let identifier = "MainTableViewCell"
     static let nib = UINib(nibName: MainTableViewCell.identifier, bundle: nil)
     
+    @IBOutlet weak var url: UILabel!
+    @IBOutlet weak var desc: UILabel!
     @IBOutlet weak var partnerName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

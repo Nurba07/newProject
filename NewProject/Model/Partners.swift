@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct Partners: Codable {
-    let currentPartners: [CurrentPartners]
-}
+//struct Partners: Codable {
+//    let currentPartners: [CurrentPartners]
+//}
+//
+//struct CurrentPartners: Codable {
+//    let partnerId1, partnerId2, partnerId3: [PartnerID]
+//}
 
-struct CurrentPartners: Codable {
-    let partnerId1, partnerId2, partnerId3: PartnerID
-}
 
-
-struct PartnerID: Codable {
+class PartnerID{
     let name, partnerIDDescription, url: String
 
     enum CodingKeys: String, CodingKey {
@@ -24,5 +24,14 @@ struct PartnerID: Codable {
         case partnerIDDescription = "description"
         case url
     }
+    init(name: String,partnerIDDescription: String, url: String){
+        self.name = name
+        self.url = url
+        self.partnerIDDescription = partnerIDDescription
+        
+    }
+
 }
+
+
 
