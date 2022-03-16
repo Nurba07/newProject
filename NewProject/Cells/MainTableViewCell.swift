@@ -12,6 +12,7 @@ class MainTableViewCell: UITableViewCell {
     static let identifier = "MainTableViewCell"
     static let nib = UINib(nibName: MainTableViewCell.identifier, bundle: nil)
     
+    @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var url: UILabel!
     @IBOutlet weak var desc: UILabel!
     @IBOutlet weak var partnerName: UILabel!

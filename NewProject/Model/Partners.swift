@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 //struct Partners: Codable {
 //    let currentPartners: [CurrentPartners]
@@ -17,18 +18,18 @@ import Foundation
 
 
 class PartnerID{
-    let name, partnerIDDescription, url: String
+    let name, url: String
+    let logo: String?
 
     enum CodingKeys: String, CodingKey {
         case name
-        case partnerIDDescription = "description"
         case url
+        case logo
     }
-    init(name: String,partnerIDDescription: String, url: String){
+    init(name: String, url: String, logo: String?){
         self.name = name
         self.url = url
-        self.partnerIDDescription = partnerIDDescription
-        
+        self.logo = logo
     }
 
 }

@@ -7,8 +7,8 @@
 
 import UIKit
 import FirebaseDatabase
-import Firebase
 import nanopb
+import FirebaseStorage
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
@@ -17,10 +17,8 @@ class ViewController: UIViewController {
         }
     }
     let ref = Database.database().reference(withPath: "currentPartners")
-
     var current = [PartnerID]()
-    
-
+    var storage: Storage!
     
     
     override func viewDidLoad() {
@@ -39,20 +37,25 @@ class ViewController: UIViewController {
 
     func readFromFirebase(){
 
+        let userPostRefer = Storage.storage().reference().child("images")
         ref.observe(.value) { snapshot in
             for child in snapshot.children.allObjects as! [DataSnapshot] {
                 let childObject = child.value as! [String : AnyObject]
                 let name = childObject["name"]
-                let desc = childObject["description"]
                 let url = childObject["url"]
+                let logo = childObject["logo"]
                 
-                let snap = PartnerID(name: (name as! String?)!, partnerIDDescription: (desc as! String?)!, url: (url as! String?)!)
+                let snap = PartnerID(name: (name as! String?)!, url: (url as! String?)!, logo: logo as! String)
                 self.current.append(snap)
-          }
+                }
             self.tableView.reloadData()
+            }
+            
         }
-}
-}
+    }
+
+
+
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return current.count
@@ -62,7 +65,19 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier, for: indexPath) as! MainTableViewCell
         cell.partnerName.text = current[indexPath.row].name
         cell.url.text = current[indexPath.row].url
-        cell.desc.text = current[indexPath.row].partnerIDDescription
+        let urlString = current[indexPath.row].logo!
+        URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
+
+              if error != nil {
+                  print(error ?? "No Error")
+                  return
+              }
+              DispatchQueue.main.async(execute: { () -> Void in
+                  let image = UIImage(data: data!)
+                  cell.logo.image = image
+              })
+
+          }).resume()
         return cell
     }
     
