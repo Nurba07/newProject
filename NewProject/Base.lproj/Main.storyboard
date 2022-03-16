@@ -85,6 +85,21 @@
             </objects>
             <point key="canvasLocation" x="50.724637681159422" y="817.63392857142856"/>
         </scene>
+        <!--Test View Controller-->
+        <scene sceneID="Ox4-1A-hJ5">
+            <objects>
+                <viewController storyboardIdentifier="TestViewController" id="AVT-xO-dhv" customClass="TestViewController" customModule="NewProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ouk-uh-tT7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gtt-2J-dLp"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jMb-xQ-22t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="991" y="836"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="G7O-Nz-E0o">
             <objects>
@@ -107,6 +122,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

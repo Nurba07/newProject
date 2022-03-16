@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4B171F0827E229D300062B99 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B171F0627E229D300062B99 /* AlertViewController.swift */; };
 		4B171F0927E229D300062B99 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B171F0727E229D300062B99 /* AlertViewController.xib */; };
+		4B171F0B27E232FC00062B99 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B171F0A27E232FC00062B99 /* TestViewController.swift */; };
 		4B41ADA127E1F58E00D9BACF /* SpiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B41ADA027E1F58E00D9BACF /* SpiningViewController.swift */; };
 		4B41ADA327E1F5E300D9BACF /* RotatingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B41ADA227E1F5E300D9BACF /* RotatingIndicator.swift */; };
 		4B41ADA927E2034400D9BACF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B41ADAB27E2034400D9BACF /* Localizable.strings */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		4B171F0627E229D300062B99 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		4B171F0727E229D300062B99 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
+		4B171F0A27E232FC00062B99 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		4B41ADA027E1F58E00D9BACF /* SpiningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiningViewController.swift; sourceTree = "<group>"; };
 		4B41ADA227E1F5E300D9BACF /* RotatingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingIndicator.swift; sourceTree = "<group>"; };
 		4B41ADA427E202B900D9BACF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				4B41ADA027E1F58E00D9BACF /* SpiningViewController.swift */,
 				4B171F0627E229D300062B99 /* AlertViewController.swift */,
 				4B171F0727E229D300062B99 /* AlertViewController.xib */,
+				4B171F0A27E232FC00062B99 /* TestViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				4B609C1F27E06C51001ABFF0 /* SceneDelegate.swift in Sources */,
 				4B609C3627E06DAB001ABFF0 /* MainTableViewCell.swift in Sources */,
 				4B41ADA327E1F5E300D9BACF /* RotatingIndicator.swift in Sources */,
+				4B171F0B27E232FC00062B99 /* TestViewController.swift in Sources */,
 				4B41ADA127E1F58E00D9BACF /* SpiningViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
