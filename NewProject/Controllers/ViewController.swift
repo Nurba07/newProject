@@ -16,6 +16,7 @@ class ViewController: UIViewController {
             self.tableView.dataSource = self
         }
     }
+    @IBOutlet weak var toIndicator: UIBarButtonItem!
     let ref = Database.database().reference(withPath: "currentPartners")
     var current = [PartnerID]()
     var storage: Storage!
@@ -35,6 +36,10 @@ class ViewController: UIViewController {
   
     }
 
+    @IBAction func toIndicatorPressed(_ sender: Any) {
+        let vc = SpiningViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
     func readFromFirebase(){
 
         let userPostRefer = Storage.storage().reference().child("images")
@@ -63,7 +68,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier, for: indexPath) as! MainTableViewCell
-        cell.partnerName.text = current[indexPath.row].name
+        cell.partnerName.text = current[indexPath.row].name.localized()
         cell.url.text = current[indexPath.row].url
         let urlString = current[indexPath.row].logo!
         URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
@@ -82,4 +87,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     
+}
+extension String{
+    func localized() -> String{
+        return NSLocalizedString(self,
+                                 tableName: "Localizable",
+                                 bundle: .main,
+                                 value: self,
+                                 comment: self)
+    }
 }
