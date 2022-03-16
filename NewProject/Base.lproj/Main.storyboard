@@ -31,6 +31,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lRO-U3-z5r">
+                        <barButtonItem key="leftBarButtonItem" title="Left" id="3fv-Db-zqv">
+                            <connections>
+                                <action selector="alertAppear:" destination="BYZ-38-t0r" id="nZa-Yt-GQ9"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" id="PYe-Vh-hAH">
                             <connections>
                                 <action selector="toIndicatorPressed:" destination="BYZ-38-t0r" id="gh6-mk-42J"/>
@@ -46,6 +51,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="67.633928571428569"/>
+        </scene>
+        <!--Alert View Controller-->
+        <scene sceneID="fM3-8Q-ZBd">
+            <objects>
+                <viewController storyboardIdentifier="AlertViewController" id="NJg-IJ-Maf" customClass="AlertViewController" customModule="NewProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OHx-ir-0dv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PI-JN-SdS">
+                                <rect key="frame" x="20" y="585" width="374" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="qhK-Wm-dLp"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="alertAppear:" destination="NJg-IJ-Maf" eventType="touchUpInside" id="5PL-YQ-8am"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cmq-Ms-6a1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3PI-JN-SdS" firstAttribute="leading" secondItem="cmq-Ms-6a1" secondAttribute="leading" constant="20" id="Jvw-6v-axi"/>
+                            <constraint firstItem="cmq-Ms-6a1" firstAttribute="trailing" secondItem="3PI-JN-SdS" secondAttribute="trailing" constant="20" id="b0y-D3-59T"/>
+                            <constraint firstItem="cmq-Ms-6a1" firstAttribute="bottom" secondItem="3PI-JN-SdS" secondAttribute="bottom" constant="215" id="e5Z-pY-yLT"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7hy-x3-WNv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50.724637681159422" y="817.63392857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G7O-Nz-E0o">

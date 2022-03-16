@@ -36,6 +36,12 @@ class ViewController: UIViewController {
   
     }
 
+    @IBAction func alertAppear(_ sender: Any) {
+        let vc = AlertViewController()
+        vc.modalPresentationStyle = .overCurrentContext
+        self.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: false, completion: nil)
+    }
     @IBAction func toIndicatorPressed(_ sender: Any) {
         let vc = SpiningViewController()
         navigationController?.pushViewController(vc, animated: true)

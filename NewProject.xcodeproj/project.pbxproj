@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B171F0827E229D300062B99 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B171F0627E229D300062B99 /* AlertViewController.swift */; };
+		4B171F0927E229D300062B99 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B171F0727E229D300062B99 /* AlertViewController.xib */; };
 		4B41ADA127E1F58E00D9BACF /* SpiningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B41ADA027E1F58E00D9BACF /* SpiningViewController.swift */; };
 		4B41ADA327E1F5E300D9BACF /* RotatingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B41ADA227E1F5E300D9BACF /* RotatingIndicator.swift */; };
 		4B41ADA927E2034400D9BACF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B41ADAB27E2034400D9BACF /* Localizable.strings */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B171F0627E229D300062B99 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		4B171F0727E229D300062B99 /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		4B41ADA027E1F58E00D9BACF /* SpiningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiningViewController.swift; sourceTree = "<group>"; };
 		4B41ADA227E1F5E300D9BACF /* RotatingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingIndicator.swift; sourceTree = "<group>"; };
 		4B41ADA427E202B900D9BACF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 			children = (
 				4B609C2027E06C51001ABFF0 /* ViewController.swift */,
 				4B41ADA027E1F58E00D9BACF /* SpiningViewController.swift */,
+				4B171F0627E229D300062B99 /* AlertViewController.swift */,
+				4B171F0727E229D300062B99 /* AlertViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -206,6 +212,7 @@
 				4B609C3927E09445001ABFF0 /* GoogleService-Info.plist in Resources */,
 				4B609C3727E06DAB001ABFF0 /* MainTableViewCell.xib in Resources */,
 				4B609C2427E06C51001ABFF0 /* Main.storyboard in Resources */,
+				4B171F0927E229D300062B99 /* AlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +268,7 @@
 				4B609C3227E06D2E001ABFF0 /* Partners.swift in Sources */,
 				4B609C2127E06C51001ABFF0 /* ViewController.swift in Sources */,
 				4B609C1D27E06C51001ABFF0 /* AppDelegate.swift in Sources */,
+				4B171F0827E229D300062B99 /* AlertViewController.swift in Sources */,
 				4B609C1F27E06C51001ABFF0 /* SceneDelegate.swift in Sources */,
 				4B609C3627E06DAB001ABFF0 /* MainTableViewCell.swift in Sources */,
 				4B41ADA327E1F5E300D9BACF /* RotatingIndicator.swift in Sources */,
