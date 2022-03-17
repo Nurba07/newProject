@@ -106,8 +106,8 @@
 		4B609C1B27E06C51001ABFF0 /* NewProject */ = {
 			isa = PBXGroup;
 			children = (
-				4B41AD9F27E1F56400D9BACF /* Controllers */,
 				4B609C3827E09445001ABFF0 /* GoogleService-Info.plist */,
+				4B41AD9F27E1F56400D9BACF /* Controllers */,
 				4B609C3027E06CF9001ABFF0 /* Model */,
 				4B609C3327E06D8F001ABFF0 /* Cells */,
 				4B609C1C27E06C51001ABFF0 /* AppDelegate.swift */,

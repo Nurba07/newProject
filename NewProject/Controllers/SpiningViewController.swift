@@ -17,7 +17,11 @@ class SpiningViewController: UIViewController {
         view.backgroundColor = .white
         rotatingView.animate(circle: rotatingView.circle1, counter: 1)
         rotatingView.animate(circle: rotatingView.circle2, counter: 3)
-        // Do any additional setup after loading the view.
+        
+        let when = DispatchTime.now() + 2
+        DispatchQueue.main.asyncAfter(deadline: when){
+            self.rotatingView.removeFromSuperview()
+        }
     }
 
     private func configureRotating(){

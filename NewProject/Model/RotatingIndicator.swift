@@ -48,7 +48,10 @@ class RotatingIndicator: UIView{
             case 3:
                 if circle == self.circle1 {self.circle1.layer.zPosition = 0}
             default:
-                print()
+                let when = DispatchTime.now() + 4
+                DispatchQueue.main.asyncAfter(deadline: when){
+                    if circle == self.circle1 {self.circle1.layer.zPosition = 2}
+                }
             }
             
         }) { (completed) in
@@ -58,7 +61,7 @@ class RotatingIndicator: UIView{
             case 3:
                 counter = 0
             default:
-                print()
+                print("Error")
             }
             self.animate(circle: circle, counter: counter)
         }

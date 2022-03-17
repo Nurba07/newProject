@@ -28,8 +28,6 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(MainTableViewCell.nib, forCellReuseIdentifier: MainTableViewCell.identifier)
         readFromFirebase()
-        
-        // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -41,31 +39,34 @@ class ViewController: UIViewController {
         vc.modalPresentationStyle = .overCurrentContext
         self.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: false, completion: nil)
+        let when = DispatchTime.now() + 2
+        DispatchQueue.main.asyncAfter(deadline: when){
+            self.dismiss(animated: false, completion: nil)
+            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "TestViewController") as? TestViewController{
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
     }
     @IBAction func toIndicatorPressed(_ sender: Any) {
         let vc = SpiningViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     func readFromFirebase(){
-
-        let userPostRefer = Storage.storage().reference().child("images")
-        ref.observe(.value) { snapshot in
+            ref.observe(.value) { snapshot in
             for child in snapshot.children.allObjects as! [DataSnapshot] {
                 let childObject = child.value as! [String : AnyObject]
                 let name = childObject["name"]
                 let url = childObject["url"]
                 let logo = childObject["logo"]
                 
-                let snap = PartnerID(name: (name as! String?)!, url: (url as! String?)!, logo: logo as! String)
+                let snap = PartnerID(name: (name as! String?)!, url: (url as! String?)!, logo: logo as? String)
                 self.current.append(snap)
-                }
-            self.tableView.reloadData()
             }
-            
+            self.tableView.reloadData()
         }
+        
     }
-
-
+}
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,17 +79,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         cell.url.text = current[indexPath.row].url
         let urlString = current[indexPath.row].logo!
         URLSession.shared.dataTask(with: NSURL(string: urlString)! as URL, completionHandler: { (data, response, error) -> Void in
-
-              if error != nil {
-                  print(error ?? "No Error")
-                  return
-              }
-              DispatchQueue.main.async(execute: { () -> Void in
-                  let image = UIImage(data: data!)
-                  cell.logo.image = image
-              })
-
-          }).resume()
+            
+            if error != nil {
+                print(error ?? "No Error")
+                return
+            }
+            DispatchQueue.main.async(execute: { () -> Void in
+                let image = UIImage(data: data!)
+                cell.logo.image = image
+            })
+            
+        }).resume()
         return cell
     }
     
